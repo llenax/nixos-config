@@ -7,6 +7,7 @@
     ./network.nix
     ./sound.nix
     ./user.nix
+    ./env.nix
     ./x.nix
   ];
 }

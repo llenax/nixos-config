@@ -2,7 +2,8 @@
   imports = [
     ./zsh.nix
     ./spotify.nix
-    ./nixvim.nix
+    ./nixvim
     ./vscode.nix
+    ./direnv.nix
   ];
 }

@@ -4,11 +4,18 @@
     mpv
     inputs.zen-browser.packages."${system}".beta
     ghostty
+    prismlauncher
+    lmstudio
+    jetbrains.pycharm-community
+    element-desktop
+    krdc
 
     #dev
     gnumake
     gcc
     nodejs
+    stdenv.cc.cc.lib
+    devenv
 
     #cli
     wget
@@ -18,5 +25,9 @@
     unzip
     zip
     yt-dlp
+    python3
+    uv
+    ripgrep
+    lm_sensors
   ];
 }
