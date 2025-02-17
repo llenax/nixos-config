@@ -1,19 +1,27 @@
 {
+  none-ls = {
+    enable = true;
+    sources = {
+      diagnostics = {};
+      formatting = {};
+    };
+  };
+
+  trouble.enable = true;
+
   lsp = {
     enable = true;
     inlayHints = true;
 
     servers = {
       ccls.enable = true;
-      cssls.enable = true;
+      pyright.enable = true;
+      clangd.enable = true;
       dockerls.enable = true;
       gopls.enable = true;
       html.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
-      pylsp.enable = true;
-      superhtml.enable = true;
-      tailwindcss.enable = true;
       ts_ls.enable = true;
 
       nixd = {
@@ -23,11 +31,6 @@
           formatting.command = [ "nixpkgs-fmt" ];
           nixpkgs.expr = "import <nixpkgs> {}";
         };
-      };
-
-      yamlls = {
-        enable = true;
-        filetypes = [ "yaml" ];
       };
 
     };

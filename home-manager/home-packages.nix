@@ -1,4 +1,4 @@
-{ pkgs, inputs, system, ... }: {
+{ pkgs, pkgs-unstable, inputs, system, ... }: {
   home.packages = with pkgs; [
     #apps
     mpv
@@ -9,6 +9,7 @@
     jetbrains.pycharm-community
     element-desktop
     krdc
+    pkgs-unstable.zed-editor
 
     #dev
     gnumake

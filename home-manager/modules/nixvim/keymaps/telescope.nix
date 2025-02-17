@@ -19,15 +19,6 @@
   }
   {
     mode = "n";
-    key = "<leader>p" ;
-    action = "<cmd>Telescope file_browser<CR>";
-    options = {
-      desc = "Explore files (File Browser)";
-      silent = true;
-    };
-  }
-  {
-    mode = "n";
     key = "<leader>f";
     action = "<cmd>Telescope find_files<CR>";
     options = {
@@ -41,6 +32,15 @@
     action = "<cmd>Telescope frecency<CR>";
     options = {
       desc = "Find Frecency Files";
+      silent = true;
+    };
+  }
+  {
+    mode = "n";
+    key = "<leader>p";
+    action = "<cmd>Telescope diagnostics<CR>";
+    options = {
+      desc = "Diagnostics";
       silent = true;
     };
   }

@@ -3,9 +3,12 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
+      equinusocio.vsc-material-theme-icons
+      equinusocio.vsc-material-theme
       vscodevim.vim
-      yzhang.markdown-all-in-one
+      visualstudioexptteam.vscodeintellicode
+      ms-vscode.cpptools-extension-pack
+      bbenoist.nix
     ];
   };
 }

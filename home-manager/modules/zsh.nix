@@ -5,7 +5,7 @@
     enableCompletion = true;
     shellAliases = {
     	rebuild = "sudo nixos-rebuild switch";
-      svim = "sudo -E nvim";
+      svim = "sudo -E vim";
     };
     # enableAutosuggestions = true;
     autosuggestion.enable = true;

@@ -3,6 +3,8 @@
     enable = true;
     defaultEditor = true;
 
+    colorschemes.rose-pine.enable = true;
+
     nixpkgs.useGlobalPackages = true;
 
     # extraConfigLua = ''
@@ -18,12 +20,15 @@
     globals = {} //
       (import ./globals.nix);
 
-    plugins = {} // (
+    plugins = {
+      web-devicons.enable = true;
+    } // (
       (import ./plugins/telescope.nix)  
       // (import ./plugins/treesitter.nix)  
       // (import ./plugins/lsp.nix)  
       // (import ./plugins/neo-tree.nix)
       // (import ./plugins/oil.nix)
+      // (import ./plugins/cmp.nix)
     );
 
     keymaps = []
