@@ -5,7 +5,7 @@
       isNormalUser = true;
       description = "berke";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" "input"];
+      extraGroups = [ "networkmanager" "wheel" "input" "docker"];
       packages = with pkgs; [];
     };
   };

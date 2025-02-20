@@ -5,5 +5,7 @@
     ./nixvim
     ./vscode.nix
     ./direnv.nix
+    ./tmux.nix
+    ./starship
   ];
 }

@@ -1,15 +1,27 @@
 { pkgs, pkgs-unstable, inputs, system, ... }: {
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     #apps
     mpv
-    inputs.zen-browser.packages."${system}".beta
-    ghostty
-    prismlauncher
+
+    #ai
     lmstudio
-    jetbrains.pycharm-community
+
+    #games
+    prismlauncher
+
+    #social
     element-desktop
-    krdc
-    pkgs-unstable.zed-editor
+
+    #browsers
+    inputs.zen-browser.packages."${system}".beta
+
+    #text-editors
+    jetbrains.pycharm-community
+
+    #kde
+    krdc  # remote desktop
+    kara    # pager widget
 
     #dev
     gnumake
@@ -26,9 +38,19 @@
     unzip
     zip
     yt-dlp
-    python3
-    uv
     ripgrep
     lm_sensors
-  ];
+
+    #fonts
+    (nerdfonts.override {
+      fonts = [ "FiraCode" "DroidSansMono" "Hermit" ];
+    })
+
+  ] ++ (with pkgs-unstable; [
+    #terminals
+    ghostty
+    
+    #text-editors
+    zed-editor
+  ]);
 }
