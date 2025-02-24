@@ -7,5 +7,6 @@
     ./direnv.nix
     ./tmux.nix
     ./starship
+    ./obs.nix
   ];
 }

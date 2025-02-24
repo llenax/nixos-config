@@ -3,12 +3,16 @@
   home.packages = with pkgs; [
     #apps
     mpv
+    vlc
 
     #ai
     lmstudio
 
     #games
     prismlauncher
+
+    #game-engines
+    godot_4
 
     #social
     element-desktop
@@ -33,6 +37,7 @@
     #cli
     wget
     git
+    git-lfs
     fastfetch
     htop
     unzip
@@ -40,6 +45,8 @@
     yt-dlp
     ripgrep
     lm_sensors
+    lshw
+    hdparm
 
     #fonts
     (nerdfonts.override {

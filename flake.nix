@@ -22,8 +22,8 @@
 
   outputs = {
 	self,
-  nixpkgs,
-  nixpkgs-unstable,
+	nixpkgs,
+	nixpkgs-unstable,
 	zen-browser,
 	spicetify-nix,
 	nixvim,

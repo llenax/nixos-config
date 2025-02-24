@@ -1,5 +1,11 @@
+format = """
+$git_branch$git_commit$git_status $direnv\n$directory$character
+"""
+
+right_format = """$cmd_duration"""
+
 [character]
-success_symbol = "[>_](bold green)"
+success_symbol = "[\\$](bold green)"
 error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
 

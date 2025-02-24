@@ -40,7 +40,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = [
-	  pkgs.home-manager
+    pkgs.home-manager
   ];
 
   nix.extraOptions = ''

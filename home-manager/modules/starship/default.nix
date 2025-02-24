@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.starship = {
-    enable = true;
+    enable = false;
     settings = pkgs.lib.importTOML ./starship.toml;
   };
 }

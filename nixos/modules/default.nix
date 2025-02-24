@@ -6,6 +6,7 @@
     ./laptop.nix
     ./network.nix
     ./sound.nix
+    ./steam.nix
     ./user.nix
     ./env.nix
     ./x.nix
