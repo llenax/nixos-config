@@ -11,8 +11,7 @@
     # Force tmux to use /tmp for sockets (WSL2 compat)
     secureSocket = false;
 
-    plugins = with pkgs; [
-    ];
+    plugins = with pkgs; [];
 
     extraConfig = ''
       set-option -sa terminal-overrides ",st*:Tc"

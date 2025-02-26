@@ -4,6 +4,7 @@
     #apps
     mpv
     vlc
+    aseprite
 
     #ai
     lmstudio
@@ -48,6 +49,7 @@
     lshw
     hdparm
 
+
     #fonts
     (nerdfonts.override {
       fonts = [ "FiraCode" "DroidSansMono" "Hermit" ];
@@ -59,5 +61,6 @@
     
     #text-editors
     zed-editor
+    
   ]);
 }

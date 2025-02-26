@@ -5,9 +5,10 @@
     enableCompletion = true;
     shellAliases = {
     	rebuild = "sudo nixos-rebuild switch";
+      delete-old-generations = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old";
+      collect-garbage = "sudo nix-collect-garbage -d";
       svim = "sudo -E vim";
     };
-    # enableAutosuggestions = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
