@@ -11,6 +11,7 @@
     extraConfig = {
       gpg.format = "ssh";
       gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
     };
   };
 }
