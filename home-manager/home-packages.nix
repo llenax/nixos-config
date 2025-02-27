@@ -38,7 +38,6 @@
 
     #cli
     wget
-    git
     git-lfs
     fastfetch
     htop

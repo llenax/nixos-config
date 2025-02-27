@@ -1,12 +1,13 @@
 {
   imports = [
+    ./nixvim
+    ./starship
+    ./git.nix
     ./zsh.nix
     ./spotify.nix
-    ./nixvim
     ./vscode.nix
     ./direnv.nix
     ./tmux.nix
-    ./starship
     ./obs.nix
   ];
 }
