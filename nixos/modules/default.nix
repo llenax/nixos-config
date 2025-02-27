@@ -9,6 +9,7 @@
     ./steam.nix
     ./user.nix
     ./env.nix
+    ./virtualisation.nix
     ./x.nix
   ];
 }

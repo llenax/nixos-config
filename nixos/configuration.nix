@@ -39,16 +39,9 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = [
-    pkgs.home-manager
-  ];
-
   nix.extraOptions = ''
     trusted-users = root berke
     '';
-
-  virtualisation = {} //
-    (import ./modules/virtualisation.nix);
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

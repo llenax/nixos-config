@@ -21,14 +21,12 @@
   };
 
   outputs = {
-	self,
-	nixpkgs,
-	nixpkgs-unstable,
-	zen-browser,
-	spicetify-nix,
-	nixvim,
-	home-manager,
-	...
+    nixpkgs,
+    nixpkgs-unstable,
+    spicetify-nix,
+    nixvim,
+    home-manager,
+    ...
   } @inputs:
     let
       system = "x86_64-linux";

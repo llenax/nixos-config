@@ -5,6 +5,7 @@
     mpv
     vlc
     aseprite
+    anydesk
 
     #ai
     lmstudio
