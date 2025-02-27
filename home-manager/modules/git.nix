@@ -9,9 +9,13 @@
       signByDefault = true;
     };
     extraConfig = {
-      gpg.format = "ssh";
-      gpg.ssh.program = "${pkgs.openssh}/bin/ssh-keygen";
-      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      gpg = {
+        format = "ssh";
+        ssh = {
+          program = "${pkgs.openssh}/bin/ssh-keygen";
+          allowedSignersFile = "~/.ssh/allowed_signers";
+        };
+      };
     };
   };
 }
