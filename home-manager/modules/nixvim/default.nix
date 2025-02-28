@@ -3,7 +3,7 @@
     enable = true;
     defaultEditor = true;
 
-    colorschemes.rose-pine.enable = true;
+    colorschemes.onedark.enable = true;
 
     nixpkgs.useGlobalPackages = true;
 
@@ -27,9 +27,18 @@
       // (import ./plugins/treesitter.nix)  
       // (import ./plugins/lsp.nix)  
       // (import ./plugins/neo-tree.nix)
-      // (import ./plugins/oil.nix)
       // (import ./plugins/cmp.nix)
+      // (import ./plugins/oil.nix)
+      // (import ./plugins/colorizer.nix)
     );
+
+    # extraPlugins = with pkgs.vimPlugins; [
+    #   mason-nvim
+    # ];
+
+    # extraConfigLuaPre = ''
+    #   require('mason').setup()
+    # '';
 
     keymaps = []
       ++ import ./keymaps/telescope.nix

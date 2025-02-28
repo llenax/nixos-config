@@ -9,6 +9,14 @@
   }
   {
     mode = [ "n" ];
+    key = "<leader>pf";
+    action = ''<cmd>lua require("oil").open_float(vim.fn.expand("%:h"))<cr>'';
+    options = {
+      desc = "Open Oil.nvim as float";
+    };
+  }
+  {
+    mode = [ "n" ];
     key = "<leader>h";
     action = ''<cmd>lua require("oil").toggle_hidden()<CR>'';
     options = {
