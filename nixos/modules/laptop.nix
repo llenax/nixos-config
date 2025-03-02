@@ -21,4 +21,5 @@
   
         };
   };
+  services.logind.lidSwitch = "ignore";
 }

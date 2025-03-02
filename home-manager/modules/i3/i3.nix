@@ -63,6 +63,18 @@
           always = false;
           notification = false;
         }
+        # screensaver disable
+        {
+          command = "exec xset s off";
+          always = true;
+          notification = false;
+        }
+        # powersaving disable
+        {
+          command = "exec xset -dpms";
+          always = true;
+          notification = false;
+        }
       ];
 
     };
