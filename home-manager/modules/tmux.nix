@@ -14,8 +14,8 @@
     plugins = with pkgs; [];
 
     extraConfig = ''
-      set-option -sa terminal-overrides ",st*:Tc"
-      set-option -g default-terminal "tmux-256color"
+      set -g default-terminal "alacritty"
+      set -g terminal-overrides ",alacritty:Tc"
 
       # Mouse works as expected
       set-option -g mouse on

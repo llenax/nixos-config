@@ -2,13 +2,22 @@
   imports = [
     ./bluetooth.nix
     ./bootloader.nix
-    ./dm.nix
+    ./console.nix
+    # ./dm.nix
+    ./env.nix
+    ./hardware-configuration.nix
+    ./kernel.nix
     ./laptop.nix
+    ./locales.nix
     ./network.nix
+    ./nix.nix
+    ./overlays.nix
+    ./packages.nix
+    ./printing.nix
     ./sound.nix
     ./steam.nix
+    ./time.nix
     ./user.nix
-    ./env.nix
     ./virtualisation.nix
     ./x.nix
   ];

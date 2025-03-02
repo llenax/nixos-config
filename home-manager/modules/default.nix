@@ -1,7 +1,9 @@
 {
   imports = [
+    ./i3
     ./nixvim
     ./starship
+    ./terminals
     ./git.nix
     ./zsh.nix
     ./spotify.nix

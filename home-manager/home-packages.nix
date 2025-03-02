@@ -6,6 +6,7 @@
     vlc
     aseprite
     anydesk
+    shutter
 
     #ai
     lmstudio
@@ -36,11 +37,15 @@
     stdenv.cc.cc.lib
     devenv
 
+    #virtualization
+    arion
+
     #cli
     wget
     git-lfs
     fastfetch
     htop
+    btop
     unzip
     zip
     yt-dlp
@@ -48,6 +53,16 @@
     lm_sensors
     lshw
     hdparm
+    brightnessctl
+
+    #sound
+    pasystray
+    pavucontrol
+    pamixer
+    playerctl
+
+    #network
+    nm-tray
 
 
     #fonts
@@ -57,7 +72,7 @@
 
   ] ++ (with pkgs-unstable; [
     #terminals
-    ghostty
+    # ghostty
     
     #text-editors
     zed-editor
