@@ -28,8 +28,8 @@
         "XF86AudioNext" = "exec playerctl next";
         "XF86AudioPrev" = "exec playerctl previous";
         "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-        "${modifier}+a" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
-        "${modifier}+Shift+a" = "exec ${pkgs.rofi}/bin/rofi -show window";
+        # "${modifier}+a" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+        # "${modifier}+Shift+a" = "exec ${pkgs.rofi}/bin/rofi -show window";
       };
 
       startup = [

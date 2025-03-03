@@ -17,6 +17,7 @@
     ./sound.nix
     ./steam.nix
     ./time.nix
+    ./usb.nix
     ./user.nix
     ./virtualisation.nix
     ./x.nix

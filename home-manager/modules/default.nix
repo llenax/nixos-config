@@ -11,5 +11,6 @@
     ./direnv.nix
     ./tmux.nix
     ./obs.nix
+    ./qt.nix
   ];
 }

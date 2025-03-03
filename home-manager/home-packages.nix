@@ -7,6 +7,8 @@
     aseprite
     anydesk
     shutter
+    lxappearance
+    qt6ct
 
     #ai
     lmstudio
@@ -26,9 +28,9 @@
     #text-editors
     jetbrains.pycharm-community
 
-    #kde
-    krdc  # remote desktop
-    kara    # pager widget
+    # #kde
+    # krdc  # remote desktop
+    # kara    # pager widget
 
     #dev
     gnumake
@@ -63,7 +65,9 @@
 
     #network
     nm-tray
-
+    
+    #file manager
+    pcmanfm-qt
 
     #fonts
     (nerdfonts.override {
