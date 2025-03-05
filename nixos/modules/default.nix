@@ -1,25 +1,10 @@
+{ lib, ... }:
 {
-  imports = [
-    ./bluetooth.nix
-    ./bootloader.nix
-    ./console.nix
-    # ./dm.nix
-    ./env.nix
-    ./hardware-configuration.nix
-    ./kernel.nix
-    ./laptop.nix
-    ./locales.nix
-    ./network.nix
-    ./nix.nix
-    ./overlays.nix
-    ./packages.nix
-    ./printing.nix
-    ./sound.nix
-    ./steam.nix
-    ./time.nix
-    ./usb.nix
-    ./user.nix
-    ./virtualisation.nix
-    ./x.nix
-  ];
+  imports = map (file: import ./${file}) (lib.attrNames(
+    lib.filterAttrs(filename: kind:
+      filename != "default.nix" &&
+        (kind == "regular" || kind == "directory")
+    )
+    (builtins.readDir ./.)
+  ));
 }

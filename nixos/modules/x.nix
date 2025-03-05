@@ -13,6 +13,13 @@
     desktopManager.xterm.enable = false;
   };
 
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      tapping = false;
+    };
+  };
+
   services.displayManager = {
     defaultSession = "none+i3";
   };

@@ -1,16 +1,10 @@
+{ lib, ... }:
 {
-  imports = [
-    ./i3
-    ./nixvim
-    ./starship
-    ./terminals
-    ./git.nix
-    ./zsh.nix
-    ./spotify.nix
-    ./vscode.nix
-    ./direnv.nix
-    ./tmux.nix
-    ./obs.nix
-    ./qt.nix
-  ];
+  imports = map (file: import ./${file}) (lib.attrNames(
+    lib.filterAttrs(filename: kind:
+      filename != "default.nix" &&
+        (kind == "regular" && builtins.match ".*\\.nix" filename != null || kind == "directory")
+    )
+    (builtins.readDir ./.)
+  ));
 }

@@ -7,8 +7,12 @@
     aseprite
     anydesk
     shutter
+    maim
     lxappearance
     qt6ct
+
+    #office
+    libreoffice-qt6-fresh
 
     #ai
     lmstudio
@@ -56,6 +60,10 @@
     lshw
     hdparm
     brightnessctl
+    xclip
+    imagemagick
+    feh
+    octave
 
     #sound
     pasystray
@@ -77,6 +85,9 @@
   ] ++ (with pkgs-unstable; [
     #terminals
     # ghostty
+
+    #terminal-file-managers
+    superfile
     
     #text-editors
     zed-editor
