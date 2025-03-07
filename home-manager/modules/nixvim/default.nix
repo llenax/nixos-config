@@ -20,24 +20,56 @@
       -- CursorLineSign: Controls the sign column on the cursor line.
       vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "None" })
     
-
       -- function _G.toggle_hidden()
       --   local oil = require("oil")
       --   oil.toggle_hidden()
       -- end
 
-      function OpenTerm()
-        vim.cmd.vnew()
-        vim.cmd.term()
-        vim.cmd.wincmd("J")
-        vim.api.nvim_win_set_height(0, 10)
-      end
+      local terminal_state = {
+        buf = -1,
+        win = -1,
+      }
 
-      vim.api.nvim_create_autocmd('TermOpen', {
-        group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+      function CreateTerm()
+        if vim.api.nvim_buf_is_valid(terminal_state.buf) then
+          -- If buffer is valid but not in a window, open it in a split
+          if not vim.api.nvim_win_is_valid(terminal_state.win) then
+            vim.cmd("belowright split")
+            vim.cmd("resize " .. math.floor(vim.o.lines * 0.3))
+            vim.api.nvim_win_set_buf(0, terminal_state.buf)
+            terminal_state.win = vim.api.nvim_get_current_win()
+          else
+            -- If already in a window, just switch to it
+            vim.api.nvim_set_current_win(terminal_state.win)
+          end
+        else
+          -- Create a new buffer and open in a split
+          vim.cmd("belowright split")
+          vim.cmd("resize " .. math.floor(vim.o.lines * 0.3))
+          vim.cmd("terminal")
+      
+          -- Get the buffer and window
+          terminal_state.buf = vim.api.nvim_get_current_buf()
+          terminal_state.win = vim.api.nvim_get_current_win()
+        end
+      end
+      
+      vim.api.nvim_create_user_command("Terminal", function()
+        if vim.api.nvim_win_is_valid(terminal_state.win) then
+          vim.api.nvim_win_close(terminal_state.win, true)
+          terminal_state.win = -1
+        else
+          CreateTerm()
+        end
+      end, {})
+      
+      vim.api.nvim_create_autocmd("TermOpen", {
+        group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
         callback = function()
-          vim.opt.number = false
-          vim.opt.relativenumber = false
+          vim.opt_local.number = false
+          vim.opt_local.relativenumber = false
+          vim.opt_local.scrolloff = 0
+          vim.bo.filetype = "terminal"
         end
       })
       '';

@@ -2,9 +2,9 @@
   {
     mode = "n";
     key = ''<leader>t'';
-    action = ''<cmd>lua OpenTerm()<CR>'';
+    action = ''<cmd>Terminal<CR>'';
     options = {
-      desc = "open terminal";
+      desc = "open-close terminal";
     };
   }
   {
