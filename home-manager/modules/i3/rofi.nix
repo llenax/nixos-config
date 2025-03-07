@@ -1,6 +1,7 @@
+{ lib, ... }:
 {
   programs.rofi = {
     enable = true;   
-    theme = "gruvbox-dark-soft";
+    theme = lib.mkDefault "gruvbox-dark-soft";
   };
 }

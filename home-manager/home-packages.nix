@@ -64,6 +64,7 @@
     imagemagick
     feh
     octave
+    dconf
 
     #sound
     pasystray
@@ -84,7 +85,7 @@
 
   ] ++ (with pkgs-unstable; [
     #terminals
-    # ghostty
+    ghostty
 
     #terminal-file-managers
     superfile

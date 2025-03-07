@@ -37,7 +37,7 @@
   }
   {
     mode = "n";
-    key = "<leader>p";
+    key = "<leader>d";
     action = "<cmd>Telescope diagnostics<CR>";
     options = {
       desc = "Diagnostics";

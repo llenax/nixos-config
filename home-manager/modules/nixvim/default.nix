@@ -1,21 +1,36 @@
-{ lib, ... }:
+{ inputs, lib, ... }:
 {
    programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    colorschemes.onedark.enable = true;
-    nixpkgs.useGlobalPackages = true;
+    nixpkgs = {
+      source = inputs.nixpkgs-unstable;
+    };
 
     extraConfigLua = ''
+      -- remove linenumber bg+fg
+      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='None', bg='None' })
+      vim.api.nvim_set_hl(0, 'LineNr', { fg='None', bg='None' })
+      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='None', bg='None' })
+      -- current line highlight
+      vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "None", fg = "White", bold = true })
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "None" })
+      -- git signs / diagnostics column highlight
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "None" })
+      -- CursorLineSign: Controls the sign column on the cursor line.
+      vim.api.nvim_set_hl(0, "CursorLineSign", { bg = "None" })
+    
+
       -- function _G.toggle_hidden()
       --   local oil = require("oil")
       --   oil.toggle_hidden()
       -- end
+
       function OpenTerm()
         vim.cmd.vnew()
         vim.cmd.term()
         vim.cmd.wincmd("J")
-        vim.api.nvim_win_set_height(0, 15)
+        vim.api.nvim_win_set_height(0, 10)
       end
 
       vim.api.nvim_create_autocmd('TermOpen', {
@@ -40,9 +55,9 @@
 
     cmp = {
       enable = true;
-      cmp-buffer.enable = true;
-      cmp-nvim-lsp.enable = true;
-      cmp-path.enable = true;
+      nvim-lsp.enable = true;
+      path.enable = true;
+      buffer.enable = true;
     };
     colorizer = {
       enable = true;

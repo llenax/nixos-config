@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.alacritty = {
     enable = true;
@@ -7,23 +7,23 @@
         import = [ pkgs.alacritty-theme.one_dark ];
       };
       font = {
-        normal = {
+        normal = lib.mkDefault {
           family = "FiraCode Nerd Font Mono";
           style = "Regular";
         };
-        bold = {
+        bold = lib.mkDefault {
           family = "FiraCode Nerd Font Mono";
           style = "Bold";
         };
-        italic = {
+        italic = lib.mkDefault {
           family = "FiraCode Nerd Font Mono";
           style = "Italic";
         };
-        bold_italic = {
+        bold_italic = lib.mkDefault {
           family = "FiraCode Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = 9;
+        size = lib.mkDefault 9;
       };
       window.dimensions = {
         lines = 40;

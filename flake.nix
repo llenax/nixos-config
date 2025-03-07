@@ -8,6 +8,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+    stylix.url = "github:danth/stylix/release-24.11";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -24,6 +25,9 @@
   outputs = inputs:
     let
       system = "x86_64-linux";
+      wallpaper = {
+        path = ./images/wallpapers/wp-00.jpg;
+      };
     in {
       nixosConfigurations = {
         nixos = inputs.nixpkgs.lib.nixosSystem {
@@ -41,9 +45,10 @@
                   inherit system;
                   config.allowUnfree = true;
                 };
-                inherit inputs system;
+                inherit inputs system wallpaper;
               };
               home-manager.sharedModules = [
+                inputs.stylix.homeManagerModules.stylix
                 inputs.spicetify-nix.homeManagerModules.default
                 inputs.nixvim.homeManagerModules.nixvim
               ];

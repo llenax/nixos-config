@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}:
+{pkgs, inputs, lib, ...}:
 {
   programs.spicetify =
   let
@@ -11,7 +11,7 @@
       hidePodcasts
       shuffle # shuffle+ (special characters are sanitized out of extension names)
     ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    # theme = lib.mkDefault spicePkgs.themes.catppuccin;
+    # colorScheme = lib.mkDefault "mocha";
   };
 }
