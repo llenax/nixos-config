@@ -52,7 +52,7 @@
 
         lspBuf = {
           gd = "definition";
-          gD = "references";
+          grr = "references";
           gt = "type_definition";
           gi = "implementation";
           K = "hover";

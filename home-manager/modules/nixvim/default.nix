@@ -25,17 +25,29 @@
       --   oil.toggle_hidden()
       -- end
 
+			-- Toggle hlsearch if it's on, otherwise just do "enter"
+			function EnterRemap()
+			  ---@diagnostic disable-next-line: undefined-field
+			  if vim.v.hlsearch == 1 then
+			    vim.cmd.nohl()
+			    return ""
+			  else
+			    return vim.keycode "<CR>"
+			  end
+			end
+
       local terminal_state = {
         buf = -1,
         win = -1,
       }
 
-      function CreateTerm()
+      function CreateTerm(path)
+				local terminal_height = 0.2
         if vim.api.nvim_buf_is_valid(terminal_state.buf) then
           -- If buffer is valid but not in a window, open it in a split
           if not vim.api.nvim_win_is_valid(terminal_state.win) then
             vim.cmd("belowright split")
-            vim.cmd("resize " .. math.floor(vim.o.lines * 0.3))
+            vim.cmd("resize " .. math.floor(vim.o.lines * terminal_height))
             vim.api.nvim_win_set_buf(0, terminal_state.buf)
             terminal_state.win = vim.api.nvim_get_current_win()
           else
@@ -45,8 +57,8 @@
         else
           -- Create a new buffer and open in a split
           vim.cmd("belowright split")
-          vim.cmd("resize " .. math.floor(vim.o.lines * 0.3))
-          vim.cmd("terminal")
+          vim.cmd("resize " .. math.floor(vim.o.lines * terminal_height))
+          vim.cmd("terminal cd " .. path .. " && zsh")
       
           -- Get the buffer and window
           terminal_state.buf = vim.api.nvim_get_current_buf()
@@ -54,12 +66,23 @@
         end
       end
       
-      vim.api.nvim_create_user_command("Terminal", function()
+      vim.api.nvim_create_user_command("Terminal", function(opts)
+				local path = vim.loop.cwd()
+
+				if opts.args and string.len(opts.args) > 0 then
+					local args = vim.split(opts.args, " ")
+					path = args[1]:gsub("\"", "")
+					if path:sub(1, #"!") == "!" then
+						path = path:sub(2)
+						path = loadstring("return " .. path)()
+					end
+				end
+
         if vim.api.nvim_win_is_valid(terminal_state.win) then
           vim.api.nvim_win_close(terminal_state.win, true)
           terminal_state.win = -1
         else
-          CreateTerm()
+          CreateTerm(path)
         end
       end, {})
       
@@ -107,6 +130,8 @@
     oil.enable = true;
     telescope.enable = true;
     treesitter.enable = true;
+		quickfix.enable = true;
+		
 
     # extraPlugins = with pkgs.vimPlugins; [
     #   mason-nvim

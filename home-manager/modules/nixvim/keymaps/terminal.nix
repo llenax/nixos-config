@@ -8,6 +8,14 @@
     };
   }
   {
+    mode = "n";
+    key = ''<leader>ct'';
+    action = ''<cmd>Terminal "!vim.fn.expand('%:h')"<CR>'';
+    options = {
+      desc = "open-close terminal";
+    };
+  }
+  {
     mode = "t";
     key = ''<esc><esc>'';
     action = "<c-\\><c-n>";
