@@ -25,16 +25,15 @@
       --   oil.toggle_hidden()
       -- end
 
-			-- Toggle hlsearch if it's on, otherwise just do "enter"
-			function EnterRemap()
-			  ---@diagnostic disable-next-line: undefined-field
-			  if vim.v.hlsearch == 1 then
-			    vim.cmd.nohl()
-			    return ""
-			  else
-			    return vim.keycode "<CR>"
-			  end
-			end
+  	  -- Toggle hlsearch if it's on, otherwise just do "enter"
+      function EnterRemap()
+        if vim.v.hlsearch == 1 then
+            vim.cmd.nohl()
+          	  return ""
+        else
+            return vim.keycode "<CR>"
+        end
+      end
 
       local terminal_state = {
         buf = -1,
@@ -42,7 +41,7 @@
       }
 
       function CreateTerm(path)
-				local terminal_height = 0.2
+        local terminal_height = 0.2
         if vim.api.nvim_buf_is_valid(terminal_state.buf) then
           -- If buffer is valid but not in a window, open it in a split
           if not vim.api.nvim_win_is_valid(terminal_state.win) then
@@ -67,23 +66,23 @@
       end
       
       vim.api.nvim_create_user_command("Terminal", function(opts)
-				local path = vim.loop.cwd()
-
-				if opts.args and string.len(opts.args) > 0 then
-					local args = vim.split(opts.args, " ")
-					path = args[1]:gsub("\"", "")
-					if path:sub(1, #"!") == "!" then
-						path = path:sub(2)
-						path = loadstring("return " .. path)()
-					end
-				end
-
-        if vim.api.nvim_win_is_valid(terminal_state.win) then
-          vim.api.nvim_win_close(terminal_state.win, true)
-          terminal_state.win = -1
-        else
-          CreateTerm(path)
-        end
+      	local path = vim.loop.cwd()
+      
+      	if opts.args and string.len(opts.args) > 0 then
+      		local args = vim.split(opts.args, " ")
+      		path = args[1]:gsub("\"", "")
+      		if path:sub(1, #"!") == "!" then
+      			path = path:sub(2)
+      			path = loadstring("return " .. path)()
+      		end
+      	end
+      
+      	if vim.api.nvim_win_is_valid(terminal_state.win) then
+      		vim.api.nvim_win_close(terminal_state.win, true)
+      		terminal_state.win = -1
+      	else
+      		CreateTerm(path)
+      	end
       end, {})
       
       vim.api.nvim_create_autocmd("TermOpen", {
@@ -130,7 +129,7 @@
     oil.enable = true;
     telescope.enable = true;
     treesitter.enable = true;
-		quickfix.enable = true;
+	quickfix.enable = true;
 		
 
     # extraPlugins = with pkgs.vimPlugins; [
