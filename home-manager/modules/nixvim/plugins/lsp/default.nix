@@ -29,8 +29,16 @@
         gopls.enable = true;
         html.enable = true;
         jsonls.enable = true;
-        lua_ls.enable = true;
         ts_ls.enable = true;
+
+        lua_ls = {
+          enable = true;
+          settings = {
+            Lua = {
+              diagnostics.globals = [ "vim" ];
+            };
+          };
+        };
 
         nixd = {
           enable = true;
@@ -53,10 +61,9 @@
         lspBuf = {
           gd = "definition";
           grr = "references";
-          gt = "type_definition";
-          gi = "implementation";
           K = "hover";
-          "<F2>" = "rename";
+          "<leader>rn" = "rename";
+          "<leader>ca" = "code_action";
         };
       };
     };

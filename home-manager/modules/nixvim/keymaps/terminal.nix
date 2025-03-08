@@ -12,7 +12,7 @@
     key = ''<leader>ct'';
     action = ''<cmd>Terminal "!vim.fn.expand('%:h')"<CR>'';
     options = {
-      desc = "open-close terminal";
+      desc = "open terminal at defined path";
     };
   }
   {

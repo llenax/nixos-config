@@ -28,6 +28,7 @@
 
     #browsers
     inputs.zen-browser.packages."${system}".beta
+    brave
 
     #text-editors
     jetbrains.pycharm-community
