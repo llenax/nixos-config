@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    iamb.url = "github:ulyssa/iamb";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     stylix.url = "github:danth/stylix/release-24.11";

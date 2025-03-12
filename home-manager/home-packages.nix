@@ -10,6 +10,7 @@
     maim
     lxappearance
     qt6ct
+    inputs.iamb.packages."${system}".default
 
     #office
     libreoffice-qt6-fresh

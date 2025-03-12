@@ -30,6 +30,10 @@
         html.enable = true;
         jsonls.enable = true;
         ts_ls.enable = true;
+        tailwindcss = {
+          enable = true;
+          filetypes = [ "html" "css" "javascript" "typescript" "jsx" "tsx" ];
+        };
 
         lua_ls = {
           enable = true;

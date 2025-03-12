@@ -19,7 +19,7 @@
   }
   {
     mode = "n";
-    key = "<leader>f";
+    key = "<leader>ff";
     action = "<cmd>Telescope find_files<CR>";
     options = {
       desc = "Find Files";
@@ -46,10 +46,10 @@
   }
   {
     mode = "n";
-    key = "<leader>st";
-    action = "<cmd>Telescope live_grep<CR>";
+    key = "<leader>ft";
+    action = "<cmd>lua LiveMultigrep()<CR>";
     options = {
-      desc = "Live Grep";
+      desc = "Live Multi Grep";
       silent = true;
     };
   }

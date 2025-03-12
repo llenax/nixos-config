@@ -7,12 +7,4 @@
       desc = "copy to clipboard";
     };
   }
-  {
-    mode = [ "n" "v" ];
-    key = "<leader>p";
-    action = ''"+p'';
-    options = {
-      desc = "paste from clipboard";
-    };
-  }
 ]
