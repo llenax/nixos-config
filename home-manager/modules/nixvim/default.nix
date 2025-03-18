@@ -6,7 +6,7 @@
     nixpkgs = {
       source = inputs.nixpkgs-unstable;
     };
-    
+
     extraConfigLua = builtins.readFile ./config.lua;
 
     opts = import ./opts.nix;
@@ -17,7 +17,7 @@
         (lib.filterAttrs(filename: type:
           (type == "directory")
         ))
-        (builtins.readDir ./plugins) 
+        (builtins.readDir ./plugins)
     ));
 
     cmp = {
@@ -44,7 +44,7 @@
     treesitter.enable = true;
     quickfix.enable = true;
     lazydev.enable = true;
-		
+    mini.enable = true;
 
     # extraPlugins = with pkgs.vimPlugins; [
     #   mason-nvim
