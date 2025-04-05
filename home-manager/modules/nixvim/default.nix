@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, pkgs,lib, ... }:
 {
    programs.nixvim = {
     enable = true;
@@ -21,10 +21,10 @@
     ));
 
     cmp = {
-      enable = true;
-      nvim-lsp.enable = true;
-      path.enable = true;
-      buffer.enable = true;
+      enable = false;
+      nvim-lsp.enable = false;
+      path.enable = false;
+      buffer.enable = false;
     };
     colorizer = {
       enable = true;
@@ -38,6 +38,7 @@
       enable = true;
       none-ls.enable = true;
       trouble.enable = true;
+      lspkind.enable = true;
     };
     oil.enable = true;
     telescope.enable = true;
@@ -46,13 +47,8 @@
     lazydev.enable = true;
     mini.enable = true;
 
-    # extraPlugins = with pkgs.vimPlugins; [
-    #   mason-nvim
-    # ];
-
-    # extraConfigLuaPre = ''
-    #   require('mason').setup()
-    # '';
+    extraPlugins = (import ./plugins.nix) pkgs;
+    extraConfigLuaPre = builtins.readFile ./config-pre.lua;
 
     keymaps = lib.concatLists (map (file: import ./keymaps/${file}) (lib.attrNames(
       (lib.filterAttrs(filename: type:

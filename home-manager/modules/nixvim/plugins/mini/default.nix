@@ -114,6 +114,27 @@
             };
           };
         };
+        completion = {
+          delay = { completion = 100; info = 100; signature = 50; };
+          window = {
+            info = { height = 25; width = 80; border = null; };
+            signature = { height = 25; width = 80; border = null; };
+          };
+          lsp_completion = {
+            source_func = "completefunc";
+            auto_setup = true;
+            process_items = null;
+            snippet_insert = null;
+          };
+          fallback_action = "<C-n>";
+          mappings = {
+            force_twostep = "<C-Space>";
+            force_fallback = "<A-Space>";
+            scroll_down = "<C-f>";
+            scroll_up = "<C-b>";
+          };
+          set_vim_settings = true;
+        };
         surround = {
           mappings = {
             add = "gsa";

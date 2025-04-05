@@ -23,6 +23,7 @@
       settings = {
         experimental = { ghost_text = true; };
         sources = [
+          { name = "supermaven"; }
           { name = "nvim_lsp"; }
           { name = "path"; }
           {

@@ -3,7 +3,7 @@
     TMPDIR = "/tmp";
   };
   environment.variables = {
-    EDITOR = "nvim"; 
+    EDITOR = "nvim";
     VISUAL = "nvim";
   };
 }

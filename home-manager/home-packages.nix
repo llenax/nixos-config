@@ -11,6 +11,7 @@
     lxappearance
     qt6ct
     inputs.iamb.packages."${system}".default
+    gfn-electron
 
     #office
     libreoffice-qt6-fresh
@@ -30,6 +31,7 @@
     #browsers
     inputs.zen-browser.packages."${system}".beta
     brave
+    ungoogled-chromium
 
     #text-editors
     jetbrains.pycharm-community
@@ -65,8 +67,13 @@
     xclip
     imagemagick
     feh
-    octave
+    octaveFull
     dconf
+    gh
+    appimage-run
+    fzf
+    xdotool
+    podman-compose
 
     #sound
     pasystray
@@ -76,7 +83,7 @@
 
     #network
     nm-tray
-    
+
     #file manager
     pcmanfm-qt
 
@@ -91,9 +98,8 @@
 
     #terminal-file-managers
     superfile
-    
+
     #text-editors
     zed-editor
-    
   ]);
 }

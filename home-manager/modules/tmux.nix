@@ -30,11 +30,7 @@
       bind k select-pane -U
       bind l select-pane -R
 
-      # Allow resizing splits
-      bind -r H resize-pane -L 5
-      bind -r J resize-pane -D 5
-      bind -r K resize-pane -U 5
-      bind -r L resize-pane -R 5
+      bind-key -r q kill-pane
 
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
@@ -49,6 +45,9 @@
       bind-key R run-shell ' \
       tmux source-file ~/.config/tmux/tmux.conf > /dev/null; \
       tmux display-message "sourced tmux.conf"'
+
+      # run tmux-sessionizer
+      bind-key -r f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
 
       # easy-to-remember split pane commands
       bind | split-window -h -c "#{pane_current_path}"

@@ -31,5 +31,6 @@
   services.xserver.xkb = {
     layout = "tr";
     variant = "";
+    options = "caps:escape"; # remap capslock to escape
   };
 }

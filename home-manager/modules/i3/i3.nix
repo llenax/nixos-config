@@ -20,7 +20,6 @@
           inner = 0;
           outer = 0;
         };
-        
         bars = [
           #config.lib.stylix.i3.bar //
           {
@@ -117,11 +116,12 @@
           "${modifier}+Return" = "exec ${pkgs.ghostty}/bin/ghostty";
           "${modifier}+a" = "exec ${pkgs.dmenu}/bin/dmenu_run";
 
-          "Ctrl+Print" = ''exec ${pkgs.maim}/bin/maim | xclip -selection clipboard -t image/png'';
+          # "Ctrl+Print" = ''exec ${pkgs.maim}/bin/maim | xclip -selection clipboard -t image/png'';
+          "Ctrl+Print" = ''exec MAIM_PKG=${pkgs.maim}/bin/maim maim-clipboard-ss'';
           "Ctrl+Shift+Print" = ''exec ${pkgs.maim}/bin/maim --select | xclip -selection clipboard -t image/png'';
           "Print" = ''exec ${pkgs.maim}/bin/maim "$HOME/Pictures/Screenshots/Screenshot_$(date +%s)"'';
           "Shift+Print" = ''exec ${pkgs.maim}/bin/maim --select "$HOME/Pictures/Screenshots/Screenshot_$(date +%s)"'';
-    
+
           "XF86AudioMute" = "exec pamixer -t";
           "XF86AudioLowerVolume" = "exec pamixer -d 5";
           "XF86AudioRaiseVolume" = "exec pamixer -i 5";
