@@ -12,6 +12,11 @@
     qt6ct
     inputs.iamb.packages."${system}".default
     gfn-electron
+    sqlitestudio
+
+    #wine
+    wineWowPackages.stable
+    winetricks
 
     #office
     libreoffice-qt6-fresh
@@ -32,6 +37,7 @@
     inputs.zen-browser.packages."${system}".beta
     brave
     ungoogled-chromium
+    firefox
 
     #text-editors
     jetbrains.pycharm-community
@@ -47,8 +53,9 @@
     stdenv.cc.cc.lib
     devenv
 
-    #virtualization
+    #virtualisation
     arion
+    virt-manager
 
     #cli
     wget
@@ -74,6 +81,7 @@
     fzf
     xdotool
     podman-compose
+    unar
 
     #sound
     pasystray
@@ -87,10 +95,15 @@
     #file manager
     pcmanfm-qt
 
+    #php
+    pkgs.php84
+    pkgs.php84Packages.composer
+
     #fonts
     (nerdfonts.override {
-      fonts = [ "FiraCode" "DroidSansMono" "Hermit" ];
+      fonts = [ "FiraCode" "DroidSansMono" "Hermit" "Hack"];
     })
+
 
   ] ++ (with pkgs-unstable; [
     #terminals
@@ -101,5 +114,7 @@
 
     #text-editors
     zed-editor
+    code-cursor
+
   ]);
 }

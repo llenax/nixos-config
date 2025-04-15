@@ -5,7 +5,7 @@
       isNormalUser = true;
       description = "berke";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" "input" "docker" "podman"];
+      extraGroups = [ "networkmanager" "wheel" "input" "docker" "podman" "libvirtd"];
     };
   };
 }

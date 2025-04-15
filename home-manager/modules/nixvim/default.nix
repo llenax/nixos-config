@@ -1,4 +1,4 @@
-{ inputs, pkgs,lib, ... }:
+{ inputs, pkgs, lib, ... }:
 {
    programs.nixvim = {
     enable = true;
@@ -6,6 +6,10 @@
     nixpkgs = {
       source = inputs.nixpkgs-unstable;
     };
+
+    colorschemes.vscode.enable = true;
+
+    nixpkgs.config.allowUnfree = true;
 
     extraConfigLua = builtins.readFile ./config.lua;
 

@@ -23,16 +23,18 @@
 
   wrap = true;
   linebreak = true;
-  
+
   more = false;
-  
+
   foldmethod = "manual";
-  
+
   title = true;
   titlestring = ''%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'';
-  
+
   undofile = true;
 
+  smartindent = true;
+  autoindent = true;
   tabstop = 2;
   shiftwidth = 2;
   expandtab = true;

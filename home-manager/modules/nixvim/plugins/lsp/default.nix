@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 {
   imports = map (file: ./${file}) (lib.attrNames(
     (lib.filterAttrs(filename: type:
@@ -30,6 +30,10 @@
         html.enable = true;
         jsonls.enable = true;
         ts_ls.enable = true;
+        intelephense = {
+          enable = true;
+          package = pkgs.intelephense;
+        };
         tailwindcss = {
           enable = true;
           filetypes = [ "html" "css" "javascript" "typescript" "jsx" "tsx" ];

@@ -126,3 +126,10 @@ function LiveMultigrep(opts)
   }):find()
 
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "php",
+  callback = function()
+    vim.opt_local.autoindent = true
+  end,
+})

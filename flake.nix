@@ -10,6 +10,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     stylix.url = "github:danth/stylix/release-24.11";
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -36,6 +37,7 @@
             inherit inputs system;
           };
           modules = [
+            inputs.nixos-cosmic.nixosModules.default
             ./nixos/configuration.nix
             inputs.home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;

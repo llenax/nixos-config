@@ -1,8 +1,8 @@
-{ config, pkgs, lib, wallpaper, ... }:
+{ pkgs, lib, wallpaper, ... }:
 {
   xsession.windowManager.i3 = {
     enable = true;
-    package = pkgs.i3-gaps;
+    package = pkgs.i3;
 
     extraConfig = ''
       workspace_layout tabbed

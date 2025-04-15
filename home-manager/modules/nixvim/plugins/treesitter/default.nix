@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 {
   imports = map (file: ./${file}) (lib.attrNames(
     (lib.filterAttrs(filename: type:
@@ -17,6 +17,10 @@
       enable = config.treesitter.enable;
 
       nixvimInjections = true;
+
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        php
+      ];
 
       settings = {
         highlight.enable = true;

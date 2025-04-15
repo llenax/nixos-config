@@ -62,4 +62,13 @@
       silent = true;
     };
   }
+  {
+    mode = "n";
+    key = "<leader>pa";
+    action = ''<cmd>lua require("php.artisan").telescope_select_artisan()<CR>'';
+    options = {
+      desc = "PHP Artisan";
+      silent = true;
+    };
+  }
 ]

@@ -7,6 +7,7 @@
       visualstudioexptteam.vscodeintellicode
       ms-vscode.cpptools-extension-pack
       bbenoist.nix
+      bmewburn.vscode-intelephense-client
     ];
   };
 }

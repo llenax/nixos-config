@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.xserver = {
     enable = true;
@@ -11,20 +12,11 @@
 
     windowManager.i3.enable = true;
     desktopManager.xterm.enable = false;
-  };
-
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = false;
+    displayManager = {
+      setupCommands = ''
+        ${pkgs.xorg.xrandr} --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --output eDP-1 --primary --mode 1920x1080
+        '';
     };
-  };
-
-  services.displayManager = {
-    ly = {
-      enable = true;
-    };
-    defaultSession = "none+i3";
   };
 
   # Configure keymap in X11

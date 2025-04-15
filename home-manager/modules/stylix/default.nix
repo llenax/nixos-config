@@ -1,7 +1,7 @@
 { config, pkgs, wallpaper, ... }:
 {
   stylix = {
-    enable = true;
+    enable = false;
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
     base16Scheme = pkgs.lib.importJSON ./default-dark.json;
     image = wallpaper.path;
@@ -13,7 +13,9 @@
     polarity = "dark";
     targets = {
       i3.enable = false;
+      kde.enable = false;
       spicetify.enable = false;
+      vscode.enable = false;
     };
     fonts = {
       serif = {
