@@ -19,7 +19,7 @@
     cmp.buffer.enable = lib.mkDefault false;
 
     plugins.cmp = {
-      enable = true;
+      enable = config.cmp.enable;
       settings = {
         experimental = { ghost_text = true; };
         sources = [

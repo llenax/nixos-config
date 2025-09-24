@@ -24,12 +24,12 @@
         (builtins.readDir ./plugins)
     ));
 
-    cmp = {
-      enable = false;
-      nvim-lsp.enable = false;
-      path.enable = false;
-      buffer.enable = false;
-    };
+#     cmp = {
+#       enable = true;
+#       nvim-lsp.enable = true;
+#       path.enable = true;
+#       buffer.enable = true;
+#     };
     colorizer = {
       enable = true;
       css = {
@@ -42,7 +42,7 @@
       enable = true;
       none-ls.enable = true;
       trouble.enable = true;
-      lspkind.enable = true;
+      lspkind.enable = false;
     };
     oil.enable = true;
     telescope.enable = true;

@@ -10,14 +10,16 @@
       Option "OffTime" "0"
       '';
 
-    windowManager.i3.enable = true;
+    #windowManager.i3.enable = true;
     desktopManager.xterm.enable = false;
-    displayManager = {
-      setupCommands = ''
-        ${pkgs.xorg.xrandr} --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --output eDP-1 --primary --mode 1920x1080
-        '';
-    };
+    #displayManager = {
+    #  setupCommands = ''
+    #    ${pkgs.xorg.xrandr} --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --output eDP-1 --primary --mode 1920x1080
+    #    '';
+    #};
   };
+
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

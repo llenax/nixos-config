@@ -5,6 +5,8 @@
     # };
     # defaultSession = "none+i3";
 
-    cosmic-greeter.enable = true;
+    sddm.enable = true;
+
+    #cosmic-greeter.enable = true;
   };
 }

@@ -24,8 +24,6 @@
       servers = {
         ccls.enable = true;
         pyright.enable = true;
-        clangd.enable = true;
-        dockerls.enable = true;
         gopls.enable = true;
         html.enable = true;
         jsonls.enable = true;

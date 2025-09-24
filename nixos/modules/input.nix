@@ -1,9 +1,8 @@
 {
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = false;
-    };
-  };
-  console.keyMap = "trq";
+  #services.libinput = {
+  #  enable = true;
+  #  touchpad = {
+  #    tapping = false;
+  #  };
+  #};
 }

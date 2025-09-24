@@ -2,24 +2,17 @@
   description = "nixos system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    iamb.url = "github:ulyssa/iamb";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
-    stylix.url = "github:danth/stylix/release-24.11";
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/nixos-25.05";
       # url = "/home/berke/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,9 +20,6 @@
   outputs = inputs:
     let
       system = "x86_64-linux";
-      wallpaper = {
-        path = ./images/wallpapers/wp-00.jpg;
-      };
     in {
       nixosConfigurations = {
         nixos = inputs.nixpkgs.lib.nixosSystem {
@@ -37,7 +27,6 @@
             inherit inputs system;
           };
           modules = [
-            inputs.nixos-cosmic.nixosModules.default
             ./nixos/configuration.nix
             inputs.home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -48,11 +37,9 @@
                   inherit system;
                   config.allowUnfree = true;
                 };
-                inherit inputs system wallpaper;
+                inherit inputs system;
               };
               home-manager.sharedModules = [
-                inputs.stylix.homeManagerModules.stylix
-                inputs.spicetify-nix.homeManagerModules.default
                 inputs.nixvim.homeManagerModules.nixvim
               ];
             }

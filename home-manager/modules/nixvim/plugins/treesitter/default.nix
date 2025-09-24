@@ -18,9 +18,7 @@
 
       nixvimInjections = true;
 
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        php
-      ];
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [];
 
       settings = {
         highlight.enable = true;

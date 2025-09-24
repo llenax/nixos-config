@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       general = {
-        import = [ pkgs.alacritty-theme.one_dark ];
+        import = [];
       };
       font = {
         normal = lib.mkDefault {

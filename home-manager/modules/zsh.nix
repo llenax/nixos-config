@@ -3,14 +3,14 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
-    	rebuild = "sudo nixos-rebuild switch";
-      delete-old-generations = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old";
-      collect-garbage = "sudo nix-collect-garbage -d";
-      svim = "sudo -E vim";
+      #rebuild = "sudo nixos-rebuild switch";
+      #delete-old-generations = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old";
+      #collect-garbage = "sudo nix-collect-garbage -d";
+      #svim = "sudo -E vim";
     };
-    initExtra = ''
-      bindkey -s ^f "tmux-sessionizer\n"
-    '';
+    #initExtra = ''
+    #  bindkey -s ^f "tmux-sessionizer\n"
+    #'';
 
 
     autosuggestion.enable = true;

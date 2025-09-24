@@ -17,4 +17,4 @@ require("supermaven-nvim").setup({
   end -- condition to check for stopping supermaven, `true` means to stop supermaven when the condition is true.
 })
 
-require("php").setup({})
+--require("php").setup({})

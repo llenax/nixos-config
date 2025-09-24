@@ -6,41 +6,36 @@
     vlc
     aseprite
     anydesk
-    shutter
-    maim
+    #shutter
+    #maim
     lxappearance
     qt6ct
-    inputs.iamb.packages."${system}".default
-    gfn-electron
+    #gfn-electron
     sqlitestudio
 
     #wine
-    wineWowPackages.stable
-    winetricks
+    #wineWowPackages.stable
+    #winetricks
 
     #office
-    libreoffice-qt6-fresh
+    #libreoffice-qt6-fresh
 
     #ai
-    lmstudio
+    #lmstudio
 
     #games
-    prismlauncher
+    #prismlauncher
 
     #game-engines
-    godot_4
+    #godot_4
 
     #social
     element-desktop
 
     #browsers
-    inputs.zen-browser.packages."${system}".beta
-    brave
-    ungoogled-chromium
-    firefox
+    google-chrome
 
     #text-editors
-    jetbrains.pycharm-community
 
     # #kde
     # krdc  # remote desktop
@@ -65,56 +60,48 @@
     btop
     unzip
     zip
-    yt-dlp
+    #yt-dlp
     ripgrep
     lm_sensors
-    lshw
-    hdparm
-    brightnessctl
+    #lshw
+    #hdparm
+    #brightnessctl
     xclip
     imagemagick
-    feh
-    octaveFull
+    #feh
+    #octaveFull
     dconf
     gh
     appimage-run
     fzf
-    xdotool
+    #xdotool
     podman-compose
-    unar
+    #unar
 
     #sound
-    pasystray
-    pavucontrol
-    pamixer
-    playerctl
+    #pasystray
+    #pavucontrol
+    #pamixer
+    #playerctl
 
     #network
-    nm-tray
+    #nm-tray
 
     #file manager
-    pcmanfm-qt
+    #pcmanfm-qt
 
     #php
     pkgs.php84
     pkgs.php84Packages.composer
 
     #fonts
-    (nerdfonts.override {
-      fonts = [ "FiraCode" "DroidSansMono" "Hermit" "Hack"];
-    })
+    pkgs.nerd-fonts._0xproto
+    pkgs.nerd-fonts.droid-sans-mono
+	
+    #(nerdfonts.override {
+    #  fonts = [ "FiraCode" "DroidSansMono" "Hermit" "Hack"];
+    #})
 
 
-  ] ++ (with pkgs-unstable; [
-    #terminals
-    ghostty
-
-    #terminal-file-managers
-    superfile
-
-    #text-editors
-    zed-editor
-    code-cursor
-
-  ]);
+  ] ++ (with pkgs-unstable; []);
 }
