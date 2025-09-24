@@ -3,7 +3,7 @@
   programs.git = {
     enable = true;
     userName = "llenax";
-    userEmail = "67596732+llenax@users.noreply.github.com";
+    userEmail = "berkebs18@proton.me";
     signing = {
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
