@@ -1,8 +1,8 @@
 {
-  qt = {
-    enable = true;
-    platformTheme = {
-      name = "gtk3";
-    };
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme = {
+  #     name = "gtk3";
+  #   };
+  # };
 }
