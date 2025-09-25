@@ -21,6 +21,7 @@
     pamixer
     playerctl
     pcmanfm-qt
+    acpi
 
     #browsers
     google-chrome
@@ -53,6 +54,7 @@
     appimage-run
     fzf
     podman-compose
+    upower
 
     #php
     pkgs.php84
