@@ -6,40 +6,11 @@
     vlc
     aseprite
     anydesk
-    #shutter
-    #maim
     lxappearance
     qt6ct
-    #gfn-electron
-    sqlitestudio
-
-    #wine
-    #wineWowPackages.stable
-    #winetricks
-
-    #office
-    #libreoffice-qt6-fresh
-
-    #ai
-    #lmstudio
-
-    #games
-    #prismlauncher
-
-    #game-engines
-    #godot_4
-
-    #social
-    element-desktop
 
     #browsers
     google-chrome
-
-    #text-editors
-
-    # #kde
-    # krdc  # remote desktop
-    # kara    # pager widget
 
     #dev
     gnumake
@@ -60,35 +31,15 @@
     btop
     unzip
     zip
-    #yt-dlp
     ripgrep
     lm_sensors
-    #lshw
-    #hdparm
-    #brightnessctl
     xclip
     imagemagick
-    #feh
-    #octaveFull
     dconf
     gh
     appimage-run
     fzf
-    #xdotool
     podman-compose
-    #unar
-
-    #sound
-    #pasystray
-    #pavucontrol
-    #pamixer
-    #playerctl
-
-    #network
-    #nm-tray
-
-    #file manager
-    #pcmanfm-qt
 
     #php
     pkgs.php84
@@ -101,6 +52,7 @@
 
     #gnome
     gnome-extension-manager
+    gnome-tweaks
 
   ] ++ (with pkgs-unstable; []);
 }
