@@ -23,7 +23,7 @@
           family = "FiraCode Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = lib.mkDefault 9;
+        size = lib.mkDefault 13;
       };
       window.dimensions = {
         lines = 40;

@@ -97,11 +97,10 @@
     #fonts
     pkgs.nerd-fonts._0xproto
     pkgs.nerd-fonts.droid-sans-mono
-	
-    #(nerdfonts.override {
-    #  fonts = [ "FiraCode" "DroidSansMono" "Hermit" "Hack"];
-    #})
+    pkgs.nerd-fonts.fira-code
 
+    #gnome
+    gnome-extension-manager
 
   ] ++ (with pkgs-unstable; []);
 }
