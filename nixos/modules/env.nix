@@ -6,6 +6,7 @@
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
   environment.gnome.excludePackages = (with pkgs; [
       atomix # puzzle game

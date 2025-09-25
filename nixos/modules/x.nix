@@ -10,16 +10,16 @@
       Option "OffTime" "0"
       '';
 
-    #windowManager.i3.enable = true;
+    displayManager.startx.enable = true;
 
-    desktopManager.gnome = {
+    windowManager.awesome = {
       enable = true;
-    };
-    displayManager = {
-      gdm.enable = true;
+      luaModules = with pkgs.luaPackages; [
+        luarocks # is the package manager for Lua modules
+        luadbi-mysql # Database abstraction layer
+      ];
     };
 
-    desktopManager.xterm.enable = false;
     #displayManager = {
     #  setupCommands = ''
     #    ${pkgs.xorg.xrandr} --output HDMI-1 --left-of eDP-1 --mode 1920x1080 --output eDP-1 --primary --mode 1920x1080
