@@ -8,7 +8,6 @@
     anydesk
     lxappearance
     qt6ct
-    nautilus
 
     #wm
     nm-tray
