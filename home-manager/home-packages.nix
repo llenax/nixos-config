@@ -8,6 +8,7 @@
     anydesk
     lxappearance
     qt6ct
+    nautilus
 
     #wm
     nm-tray
@@ -65,9 +66,9 @@
     pkgs.nerd-fonts.droid-sans-mono
     pkgs.nerd-fonts.fira-code
 
-    #gnome
-    gnome-extension-manager
-    gnome-tweaks
+
+    #minecraft
+    prismlauncher
 
   ] ++ (with pkgs-unstable; []);
 }
