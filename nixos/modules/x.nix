@@ -12,6 +12,8 @@
 
     # displayManager.startx.enable = true;
 
+    videoDrivers = [ "nvidia" ];
+
     # windowManager.awesome = {
     #  enable = true;
     #  luaModules = with pkgs.luaPackages; [
