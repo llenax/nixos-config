@@ -10,18 +10,27 @@
     qt6ct
 
     #wm
-    # nm-tray
+    nm-tray
     # rofi
     # dunst
     # maim
     # picom
     # xdotool
-    # pasystray
-    # pavucontrol
-    # pamixer
-    # playerctl
-    # pcmanfm-qt
-    # acpi
+    pasystray
+    pavucontrol
+    pamixer
+    playerctl
+    pcmanfm-qt
+    acpi
+    hyprland
+    waybar
+    hyprpaper
+    wl-clipboard
+    wofi
+    mako
+    grim
+    slurp
+    swappy
 
     #browsers
     google-chrome
