@@ -16,7 +16,7 @@
     plugins.oil = {
       enable = config.oil.enable;
       settings = {
-        default_file_explorer = false;
+        default_file_explorer = true;
         view_options = {
           show_hidden = false;
         };

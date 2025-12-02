@@ -11,7 +11,7 @@
 
     #wm
     nm-tray
-    # rofi
+    rofi
     # dunst
     # maim
     # picom
@@ -26,7 +26,6 @@
     waybar
     hyprpaper
     wl-clipboard
-    wofi
     mako
     grim
     slurp
