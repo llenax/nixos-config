@@ -1,17 +1,19 @@
 { pkgs, ... }:
 {
-  xdg.portal = {
-    enable = true;
-    config = {
-      common = {
-        default = [ "hyprland" "gtk" ];
-      };
-    };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
+  xdg = {
+    enable = false;
   };
+  # xdg.portal = {
+  #   enable = true;
+  #   config = {
+  #     common = {
+  #       default = [ "hyprland" ];
+  #     };
+  #   };
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-hyprland
+  #   ];
+  # };
 # xdg = {
 #   enable = false;
 #   #mimeApps = {

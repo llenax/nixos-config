@@ -13,8 +13,6 @@
       modules-left = [
         "hyprland/workspaces"
           "custom/divider"
-          "custom/weather"
-          "custom/divider"
           "cpu"
           "custom/divider"
           "memory"
