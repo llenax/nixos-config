@@ -8,6 +8,8 @@
     anydesk
     lxappearance
     qt6ct
+    gimp
+    discord
 
     #wm
     # nm-tray
