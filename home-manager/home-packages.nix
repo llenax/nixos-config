@@ -65,6 +65,7 @@
     fzf
     podman-compose
     upower
+    iptables
 
     #php
     pkgs.php84
