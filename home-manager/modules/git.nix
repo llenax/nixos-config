@@ -2,13 +2,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "llenax";
-    userEmail = "berkebs18@proton.me";
-    signing = {
-      key = "~/.ssh/id_ed25519.pub";
-      signByDefault = true;
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "llenax";
+        email = "berkebs18@proton.me";
+      };
       gpg = {
         format = "ssh";
         ssh = {
@@ -16,6 +14,10 @@
           allowedSignersFile = "~/.ssh/allowed_signers";
         };
       };
+    };
+    signing = {
+      key = "~/.ssh/id_ed25519.pub";
+      signByDefault = true;
     };
   };
 }

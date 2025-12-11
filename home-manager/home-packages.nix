@@ -7,9 +7,10 @@
     aseprite
     anydesk
     lxappearance
-    qt6ct
+    qt6Packages.qt6ct
     gimp
     discord
+    filezilla
 
     #wm
     # nm-tray
@@ -66,6 +67,7 @@
     podman-compose
     upower
     iptables
+    ydotool
 
     #php
     pkgs.php84
@@ -75,6 +77,9 @@
     pkgs.nerd-fonts._0xproto
     pkgs.nerd-fonts.droid-sans-mono
     pkgs.nerd-fonts.fira-code
+
+    #gnome
+    gnome-tweaks
 
 
     #minecraft
